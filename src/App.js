@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link,Switch} from 'react-router-dom'
 import { About, Inbox, Home, Message, Client, NotFound } from './components'
 import './App.css';
 
@@ -47,9 +47,9 @@ class App extends Component {
             }/>
 
         
-            <Route  path="/inbox/:slug" component={Message}/> 
+            <Route  exact path="/inbox/:slug" component={Message}/> 
 
-            <Route component={NotFound}/>
+            <Route component={NoMatch}/>
             </Switch>
           </div>
           </Router>
