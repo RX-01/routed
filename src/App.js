@@ -42,7 +42,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About}/>
 
-            <Route exact path="/inbox" render = {(...props) => 
+            <Route exact path="/inbox" render = {(props) => 
               <Inbox {...props} entries = {this.state.Post}/>
             }/>
 
