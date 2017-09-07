@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const Inbox = (props) => {
 
-    console.log(props.entries);
+Inbox.displayname = "Inbox"
 
     return (
         <div>
@@ -14,11 +14,14 @@ export const Inbox = (props) => {
          <hr/>
             <ul>
             {props.entries.map((posts,index) => 
-                <Link key = {index} to= 
-                    {`/inbox/${posts.fields.slug}`}>
-                    <li > {posts.fields.title} </li>
-                </Link>
-            
+
+
+                <Link  key = {index} to={{
+                    pathname:  `/inbox/${posts.fields.slug}`,
+                    state: { posts: props.entries }
+                  }}> 
+                  <li > {posts.fields.title} </li> 
+                </Link>           
 
             )}
             </ul>

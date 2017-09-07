@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import { About, Inbox, Home, Message, Client } from './components'
 import './App.css';
 
@@ -38,7 +38,7 @@ class App extends Component {
             </ul>
 
             <hr/>
-
+         
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About}/>
 
@@ -46,9 +46,8 @@ class App extends Component {
               <Inbox {...props} entries = {this.state.Post}/>
             }/>
 
-            <Route strict path="/inbox/:slug" render={(...props) => <Message {...props} entries = {this.state.Post}/>}/>
         
-            {/* <Route path="/inbox/:message" component={Message}/> */}
+            <Route path="/inbox/:slug" component={Message}/> 
           </div>
           </Router>
 
@@ -59,4 +58,10 @@ class App extends Component {
   }
 }
 
+App.displayname = "App"
+
 export default App;
+
+// <Route exact path="/inbox/:slug" render={(props) => 
+//   <Message {...props} entries = {this.state.Post}/>
+// }/>
