@@ -49,7 +49,7 @@ class App extends Component {
         
             <Route  exact path="/inbox/:slug" component={Message}/> 
 
-            <Route component={NoMatch}/>
+            <Route component={NotFound}/>
             </Switch>
           </div>
           </Router>
