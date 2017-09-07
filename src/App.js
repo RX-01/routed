@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import { About, Inbox, Home, Message, Client } from './components'
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import { About, Inbox, Home, Message, Client, NotFound } from './components'
 import './App.css';
 
 class App extends Component {
@@ -38,7 +38,7 @@ class App extends Component {
             </ul>
 
             <hr/>
-         
+            <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About}/>
 
@@ -47,7 +47,10 @@ class App extends Component {
             }/>
 
         
-            <Route path="/inbox/:slug" component={Message}/> 
+            <Route  path="/inbox/:slug" component={Message}/> 
+
+            <Route component={NotFound}/>
+            </Switch>
           </div>
           </Router>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const Home = (props) => {
+export const NotFound = (props) => {
 
 
     return (
